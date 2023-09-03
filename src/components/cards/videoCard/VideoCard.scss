@@ -1,0 +1,41 @@
+@import '../../../mixins.scss';
+
+.video-thumbnail {
+    position: relative;
+    margin-bottom: 15px;
+    transition: all 0.7s ease-in-out;
+    img {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+        transition: all 0.7s ease-in-out ;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    svg {
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        transform: translate(-50%  -50%);
+        width: 50px;
+        height: 50px;
+        stroke: white;
+        transition: all 0.7s ease-in-out;
+    }
+    &:hover {
+        opacity: 0.5;
+        svg {
+            stroke: var(--pink);
+        }
+    }
+}
+.video-name {
+    font-size: 14px;
+    line-height: 20px;
+    @include ellipsis(3);
+    @include md {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

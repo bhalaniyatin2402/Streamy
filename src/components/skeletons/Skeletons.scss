@@ -1,0 +1,128 @@
+@import '../../mixins.scss';
+
+.card-skeleton {
+    width: 125px;
+    flex-shrink: 0;
+    @include md {
+        width: calc(25% - 15px);
+    }
+    @include lg {
+        width: calc(20% - 16px);
+    }
+    .poster-block {
+        width: 100%;
+        border-radius: 12px;
+        aspect-ratio: 1/1.5;
+        margin-bottom: 30px;
+    }
+    .text-block{
+        display: flex;
+        flex-direction: column;
+        .title {
+            width: 100%;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        .sub-title {
+            width: 75%;
+            height: 20px;
+        }
+    }
+}
+
+.details-skeleton {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 60px;
+    @include sm {
+        gap: 50px;
+        flex-direction: row;
+    }
+    .content-wrapper {
+        display: flex;
+        gap: 50px;
+        .left {
+            flex-shrink: 0;
+            width: 100%;
+            display: block;
+            aspect-ratio: 1/1.5;
+            border-radius: 12px;
+            @include md {
+                max-width: 350px;
+            }
+        }
+        .right {
+            width: 100%;
+            .row {
+                width: 100%;
+                height: 25px;
+                margin-bottom: 20px;
+                border-radius: 50px;
+                &:nth-child(2) {
+                    width: 75%;
+                    margin-bottom: 50px;
+                }
+                &:nth-child(5) {
+                    width: 50%;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+
+.cast-sk-item {
+    margin-bottom: 50px;
+    .circle {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        overflow: hidden;
+        @include md {
+            width: 175px;
+            height: 175px;
+            margin-bottom: 25px
+        }
+    }
+    .row {
+        height: 20px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .row2 {
+        width: 75%;
+        height: 20px;
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+}
+
+.video-sk-item {
+    width: 150px;
+    flex-shrink: 0;
+    margin-bottom: 50px;
+    @include md {
+        width: 25%;
+    }
+    .thumb {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+    .row {
+        height: 20px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .row2 {
+        height: 20px;
+        width: 75%;
+        border-radius: 10px;
+    }
+}

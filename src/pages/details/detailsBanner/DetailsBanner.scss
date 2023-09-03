@@ -1,0 +1,182 @@
+@import '../../../mixins.scss';
+
+.detail-banner-section {
+    width: 100%;
+    background-color: var(--black);
+    padding-top: 100px;
+    margin-bottom: 50px;
+    color: white;
+    @include sm {
+        padding-top: 120px;
+        margin-bottom: 0px;
+    }
+    @include md {
+        min-height: 700px;
+    }
+    .details-banner-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            img {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+    .details-banner-opacity-layer {
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(4,21,45,0) 0%,
+            #04152d 79.17%
+        );
+    }
+
+    .detail-banner-content {
+        position:  relative;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        @include sm {
+            flex-direction: row;
+            gap: 30px;
+        }
+        @include md {
+            gap: 50px;
+        }
+        .left {
+            flex-shrink: 0;
+            //  border: 1px solid red;
+            .lazy-load-image-background {
+                img {
+                    width: 100%;
+                    border-radius: 12px;
+                    @include sm {
+                        max-width: 240px;
+                        padding-bottom: 10px;
+                    }
+                    @include md {
+                        max-width: 350px;
+                        padding-bottom: 0px;
+                    }
+                }
+            }
+        }
+        .right {
+            color: white;
+            // border: 1px solid orange;
+            .title {
+                font-size: 28px;
+                line-height: 40px;
+                @include md {
+                    font-size: 34px;
+                    line-height: 44px;
+                }
+            }
+            .sub-title {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 15px;
+                font-style: italic;
+                opacity: 0.5;
+                @include md {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+            .genres-list {
+                margin-bottom: 25px;
+            }
+            .row {
+                display: flex;
+                align-items: center;
+                margin-bottom: 25px;
+                gap: 25px;
+                .circular-rating {
+                    max-width: 70px;
+                    background-color: var(--black2);
+                    @include md {
+                        max-width: 90px;
+                    }
+                    .CircularProgressbar {
+                        width: 100%;
+                        vertical-align: middle;
+                        .CircularProgressbar-text {
+                            fill: white;
+                        }
+                    }
+                }
+                .play-btn {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    transition: all 2s ease;
+                    font-size: 20px;
+                    cursor: pointer;
+                    svg {
+                        width: 60px;
+                        .circle {
+                            transition: all 2s ease;
+                            stroke: white;
+                        }
+                        .triangle {
+                            transition: all 2s ease;
+                            stroke: white;
+                        }
+                        @include md {
+                            width: 80px;
+                        }
+                    }
+                    &:hover {
+                        color: var(--pink);
+                        svg {
+                            .circle {
+                                stroke: var(--pink);
+                            }
+                            .triangle {
+                                stroke: var(--pink);
+                            }
+                        }
+                    }
+                }
+            }
+            .overview {
+                margin-bottom: 25px;
+                .overveiw-heading {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+                .overview-description {
+                    line-height: 24px;
+                    @include ellipsis(4);
+                }
+            }
+        }
+        .info-items {
+            @include sm {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 400px;
+                width: 100%;
+            }
+            @include md {
+                position: static;
+            }
+        }
+    }
+
+}
+

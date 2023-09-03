@@ -1,0 +1,56 @@
+@import '../../../mixins.scss';
+
+.videos-section {
+    position: relative;
+    margin-bottom: 50px;
+    color: white;
+    @include sm {
+        top: 230px;
+    }
+    @include md {
+        position: static;
+    }
+    .videos-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    .videos {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 0 20px;
+        @include md {
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        .video-item {
+            width: 150px;
+            flex-shrink: 0;
+            @include  md {
+                width: 25%;
+            }
+            cursor: pointer;
+        }
+    }
+}
+
+.video-skeleton-section {
+    overflow-x: auto;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 0 20px;
+    @include md {
+        margin: 0;
+        padding: 0;
+    }
+    .content-wrapper {
+        display: flex;
+        gap: 10px;
+        @include md {
+            gap: 20px;
+        }
+    }
+}

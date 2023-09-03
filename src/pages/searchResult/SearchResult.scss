@@ -1,0 +1,47 @@
+@import '../../mixins.scss';
+
+.search-results-page {
+    padding-top: 80px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+        color: white;
+        text-align: start;
+        margin-bottom: 10px;
+    }
+    .content-wrapper {
+        display: flex;
+        gap: 20px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .movie-card {
+        width: 40%;
+        @include sm {
+            width: 30%;
+        }
+        @include md {
+            width: 20%;
+        }
+        @include lg {
+            width: 23%;
+        }
+        .poster-block {
+            margin-bottom: 10px;
+        }
+    }
+    .no-result-img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 200px;
+        @include sm {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+}
