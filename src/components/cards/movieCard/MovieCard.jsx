@@ -10,9 +10,11 @@ import "./MovieCard.scss";
 
 function MovieCard({ data, fromSearch, endpoint }) {
   const navigate = useNavigate();
-  const { data: imgUrl } = useImageUrlQuery();
+  const { data: imageUrl, isLoading } = useImageUrlQuery();
+
+  if(isLoading) return
   const posterUrl = data.poster_path
-    ? imgUrl + data.poster_path
+    ? imageUrl + data.poster_path
     : PoseterFallbak;
 
   return (
@@ -32,7 +34,7 @@ function MovieCard({ data, fromSearch, endpoint }) {
       <div className="text-block">
         <span className="title">{data.title || data.name}</span>
         <span className="sub-title">
-          {dayjs(data.release_data).format("MMM D, YYYY")}
+          {dayjs(data.release_date).format("MMM D, YYYY")}
         </span>
       </div>
     </div>

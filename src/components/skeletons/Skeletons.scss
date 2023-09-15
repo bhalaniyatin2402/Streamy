@@ -49,6 +49,9 @@
             display: block;
             aspect-ratio: 1/1.5;
             border-radius: 12px;
+            @include sm {
+                max-width: 250px;
+            }
             @include md {
                 max-width: 350px;
             }

@@ -13,7 +13,7 @@ export const tmdbApi = createApi({
     }),
     endpoints: (builder) => ({
         imageUrl: builder.query({
-            query: () => 'configuration',
+            query: () => '/configuration',
             transformResponse: (response) => {
                 return response.images.secure_base_url + 'original'
             }

@@ -5,8 +5,9 @@ import profileFallBack from "../../../assets/avatar.png";
 import "./CastCard.scss";
 
 function CastCard({ data }) {
-  const { data: imageUrl } = useImageUrlQuery();
+  const { data: imageUrl, isLoading } = useImageUrlQuery();
 
+  if(isLoading) return
   const imagePath = data.profile_path
     ? imageUrl + data.profile_path
     : profileFallBack;

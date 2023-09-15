@@ -78,32 +78,33 @@ function Header() {
       <header className={`header ${mobileMenu ? "mobile-view" : ""} ${show}`}>
         <ContentWrapper>
           <div className="logo" onClick={() => navigate("/")}>
-            <img src={logo} alt="" className="logo-icon" />
-            <img src={logoName} alt="" className="logo-name" />
+            <img src={logo} alt="logo-icon" className="logo-icon" />
+            <img src={logoName} alt="logo-name" className="logo-name" />
           </div>
           <ul className="nav-items">
-            <li className="nav-item" onClick={() => navigate("explore/movie")}>
+            <li className="nav-item movies-link" onClick={() => navigate("explore/movie")}>
               Movies
             </li>
-            <li className="nav-item" onClick={() => navigate("explore/tv")}>
+            <li className="nav-item tv-shows-link" onClick={() => navigate("explore/tv")}>
               Tv Shows
             </li>
-            <li className="nav-item" onClick={openSearch}>
+            <li className="nav-item search-icon" onClick={openSearch}>
               <HiOutlineSearch />
             </li>
-          </ul>
+          </ul> 
 
           <div className="mobile-menu-items">
-            <HiOutlineSearch onClick={openSearch} />
+            <HiOutlineSearch onClick={openSearch} data-testid='mobile-search-icon' />
             {mobileMenu ? (
               <VscChromeClose
+                data-testid="hemberger-close"
                 onClick={() => {
                   setMobileMenu(false);
                   setOpacityLayer(false);
                 }}
               />
             ) : (
-              <SlMenu onClick={openMobileMenu} />
+              <SlMenu onClick={openMobileMenu} data-testid='hemberger-icon' />
             )}
           </div>
         </ContentWrapper>
@@ -113,11 +114,13 @@ function Header() {
               <div className="search-input">
                 <input
                   type="text"
+                  aria-label="search_bar"
                   placeholder="Search for movies or tv shows"
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyUp={handleSearchQuery}
                 />
                 <VscChromeClose
+                  data-testid="search_close"
                   onClick={() => {
                     setShowSearch(false);
                     setOpacityLayer(false);

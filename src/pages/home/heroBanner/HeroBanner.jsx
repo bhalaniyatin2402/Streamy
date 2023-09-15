@@ -14,9 +14,8 @@ function HeroBanner() {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
   const navigation = useNavigate();
-  const { data: imageUrl } = useImageUrlQuery();
   const { data: heroBannerBg, isLoading } = useHeroBannerBgQuery();
-
+  
   function handleSearchQuery(e) {
     if (e.key === "Enter" && query.length > 0) {
       navigation(`/search/${query}`);
@@ -26,8 +25,8 @@ function HeroBanner() {
   }
 
   useEffect(() => {
-    setBackground(imageUrl + heroBannerBg);
-  }, [heroBannerBg, imageUrl]);
+    setBackground('https://image.tmdb.org/t/p/original' + heroBannerBg);
+  }, [heroBannerBg]);
 
   return (
     <section className="hero-banner-section">

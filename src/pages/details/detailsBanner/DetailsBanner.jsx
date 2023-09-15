@@ -62,15 +62,15 @@ function DetailsBanner({ video, crew, loading }) {
             <div className="genres-list">
               <Genres data={data?.genres?.map((g) => g.id)} />
             </div>
-            <div
-              className="row"
-              onClick={() => {
-                setShow(true);
-                setVideoId(video?.key);
-              }}
-            >
+            <div className="row">
               <CIrcleRating rating={data.vote_average?.toFixed(1)} />
-              <div className="play-btn">
+              <div 
+                className="play-btn"
+                onClick={() => {
+                  setShow(true);
+                  setVideoId(video?.key);
+                }}
+              >
                 <PlayIcon />
                 Watch Trailer
               </div>

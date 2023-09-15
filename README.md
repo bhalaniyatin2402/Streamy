@@ -26,9 +26,23 @@
 - sass
 
 
+## devDependencies - Test Environment
+- @testing-library/react
+- @testing-library/jest-dom
+- @testing-library/user-event
+- jsdom
+- msw
+- vitest
+
+
 ## File Structure
 -  `public` - streamy logo shows in tab
 -  `src`
+    -  `__test__`
+        - `component` - test related to component
+        - `pages` - test related to pages
+        - `testHelper.jsx` - providing store to test environment
+        -  `testServer.js` - response fake data during testing
     -  `assets` - images like avatar, no-photo etc..
     -  `components`
         - `cards` - card like structure for movie, video & cast
@@ -46,6 +60,7 @@
     - `index.scss` - reset css and set basic style in root
     - `main.jsx` - get root element and render app
     - `mixins.scss` - set up quick responsive design
+    - `setupTest.js` - setup file for test environment
 - `index.html` - root element for single page application
 - `.gitignore` - file name that you want push into github
 - `package.json` - list of all dependencies that used in project
@@ -58,3 +73,4 @@ To run project locally
 - Set for `environment variables` in root
     - `VITE_APP_TMDB_TOKEN` - for get access of tmdb api to get result - get on tmdb site by login and get token
 - `npm run dev` to start project
+- `npm run test` to run test files
