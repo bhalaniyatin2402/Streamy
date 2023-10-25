@@ -12,6 +12,7 @@ const store = configureStore({
     tabs: tabsReducer,
   },
   middleware: (gDM) => gDM().concat(tmdbApi.middleware),
+  devTools: false
 });
 
 export default store;
