@@ -1,18 +1,18 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchExploreData,
-  setExploreMediaType,
-  setExploreEmptyState,
-} from "../../stote/exploreSlice";
-import "./Explore.scss";
 
 import ContentWrapper from "../../components/layout/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/cards/movieCard/MovieCard";
 import Spinner from "../../components/ui/spinner/Spinner";
 import NoResultPng from "../../assets/no-results.png";
 import Filter from "../../components/form/filter/Filter";
-import { useEffect } from "react";
+import {
+  fetchExploreData,
+  setExploreMediaType,
+  setExploreEmptyState,
+} from "../../stote/exploreSlice";
+import "./Explore.scss";
 
 function Explore() {
   const dispatch = useDispatch();

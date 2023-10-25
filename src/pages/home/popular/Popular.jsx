@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
+
 import { setPopularTabState } from "../../../stote/tabsSlice";
 import { usePopularQuery } from "../../../services/tmdbApi";
-
 import ContentWrapper from "../../../components/layout/contentWrapper/ContentWrapper";
 import SwitchingTabs from "../../../components/form/switchingTabs/SwitchingTabs";
 import Carousel from "../../../components/carousel/Carousel";

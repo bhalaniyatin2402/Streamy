@@ -12,9 +12,9 @@ import VideoPopup from "../../../components/ui/videoPopup/VideoPopup";
 import Info from "../../../components/helpers/info/Info";
 import Crew from "../../../components/helpers/crew/Crew";
 import DetailsSkeleton from "../../../components/skeletons/DetailsSkeleton";
+import { PlayIcon } from "../PlayIcon";
 import posterImg from "../../../assets/no-poster.png";
 import NoResult from "../../../assets/no-results.png";
-import { PlayIcon } from "../PlayIcon";
 import "./DetailsBanner.scss";
 
 function DetailsBanner({ video, crew, loading }) {

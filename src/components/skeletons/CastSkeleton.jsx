@@ -1,4 +1,4 @@
-import "./skeletons.scss";
+import "./Skeletons.scss";
 
 function CastSkeleton() {
   return (

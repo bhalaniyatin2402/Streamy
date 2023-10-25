@@ -1,10 +1,11 @@
-import ContentWrapper from "../../layout/contentWrapper/ContentWrapper";
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
+
+import ContentWrapper from "../../layout/contentWrapper/ContentWrapper";
 import "./Footer.scss";
 
 function Footer() {

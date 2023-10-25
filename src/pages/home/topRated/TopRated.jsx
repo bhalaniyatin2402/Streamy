@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
+
 import { setTopRatedTabState } from "../../../stote/tabsSlice";
 import { useTopRatedQuery } from "../../../services/tmdbApi";
-
 import ContentWrapper from "../../../components/layout/contentWrapper/ContentWrapper";
 import SwitchingTabs from "../../../components/form/switchingTabs/SwitchingTabs";
 import Carousel from "../../../components/carousel/Carousel";

@@ -1,7 +1,7 @@
-import { useTrendingQuery } from "../../../services/tmdbApi";
 import { useDispatch, useSelector } from "react-redux";
-import { setTrendingTabState } from "../../../stote/tabsSlice";
 
+import { useTrendingQuery } from "../../../services/tmdbApi";
+import { setTrendingTabState } from "../../../stote/tabsSlice";
 import ContentWrapper from "../../../components/layout/contentWrapper/ContentWrapper";
 import SwitchingTabs from "../../../components/form/switchingTabs/SwitchingTabs";
 import Carousel from "../../../components/carousel/Carousel";

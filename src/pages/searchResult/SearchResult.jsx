@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchSearchData } from "../../stote/searchSlice";
 
+import { fetchSearchData } from "../../stote/searchSlice";
 import ContentWrapper from "../../components/layout/contentWrapper/ContentWrapper";
 import Spinner from "../../components/ui/spinner/Spinner";
 import MovieCard from "../../components/cards/movieCard/MovieCard";

@@ -1,5 +1,7 @@
+import Select from "react-select";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import { useGenresQuery } from "../../../services/tmdbApi";
 import {
   setExploreGenres,
@@ -9,7 +11,6 @@ import {
   setExploreMediaType,
   fetchExploreData,
 } from "../../../stote/exploreSlice";
-import Select from "react-select";
 import "./Filter.scss";
 
 const sortByList = [

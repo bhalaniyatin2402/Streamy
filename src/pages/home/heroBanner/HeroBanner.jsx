@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import { useHeroBannerBgQuery } from "../../../services/tmdbApi";
 import { useImageUrlQuery } from "../../../services/tmdbApi";
-import { useDispatch } from "react-redux";
 import { fetchSearchData, setEmptySearch } from "../../../stote/searchSlice";
-
 import ContentWrapper from "../../../components/layout/contentWrapper/ContentWrapper";
 import Img from "../../../components/ui/lazyLoadImage/Img";
 import "./HeroBanner.scss";
