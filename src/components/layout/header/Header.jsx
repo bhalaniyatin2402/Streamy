@@ -90,12 +90,14 @@ function Header() {
               Tv Shows
             </li>
             <li className="nav-item" onClick={openSearch}>
-              <HiOutlineSearch />
+              {location.pathname !== "/" && <HiOutlineSearch />}
             </li>
           </ul>
 
           <div className="mobile-menu-items">
-            <HiOutlineSearch onClick={openSearch} />
+            {location.pathname !== "/" && (
+              <HiOutlineSearch onClick={openSearch} />
+            )}
             {mobileMenu ? (
               <VscChromeClose
                 onClick={() => {
