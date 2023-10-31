@@ -12,16 +12,17 @@ import "./HeroBanner.scss";
 function HeroBanner() {
   const dispatch = useDispatch();
   const [background, setBackground] = useState("");
-  const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const navigation = useNavigate();
   const { data: imageUrl } = useImageUrlQuery();
   const { data: heroBannerBg, isLoading } = useHeroBannerBgQuery();
 
-  function handleSearchQuery(e) {
-    if (e.key === "Enter" && query.length > 0) {
-      navigation(`/search/${query}`);
+  function handleHomeSearchQuery(e) {
+    if (e.key === "Enter" && searchQuery.length > 0) {
+      setSearchQuery("");
+      navigation(`/search/${searchQuery}`);
       dispatch(setEmptySearch());
-      dispatch(fetchSearchData(query));
+      dispatch(fetchSearchData(searchQuery));
     }
   }
 
@@ -47,15 +48,16 @@ function HeroBanner() {
             <input
               type="text"
               placeholder="Search for movies or tv shows"
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyUp={handleSearchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyUp={handleHomeSearchQuery}
             />
             <button
               onClick={() => {
-                if (query.length > 0) {
-                  navigation(`/search/${query}`);
+                if (searchQuery.length > 0) {
+                  setSearchQuery("");
+                  navigation(`/search/${searchQuery}`);
                   dispatch(setEmptySearch());
-                  dispatch(fetchSearchData(query));
+                  dispatch(fetchSearchData(searchQuery));
                 }
               }}
             >

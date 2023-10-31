@@ -51,6 +51,7 @@ function Header() {
 
   function handleSearchQuery(e) {
     if (e.key === "Enter" && query.length > 0) {
+      setQuery("");
       navigate(`/search/${query}`);
       dispatch(setEmptySearch());
       dispatch(fetchSearchData(query));
