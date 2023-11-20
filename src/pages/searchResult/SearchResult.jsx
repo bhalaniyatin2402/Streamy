@@ -33,12 +33,12 @@ function SearchResult() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleInfiniteScroll);
-    return () => window.addEventListener("scroll", handleInfiniteScroll);
+    return () => window.removeEventListener("scroll", handleInfiniteScroll);
   });
 
   return (
     <section className="search-results-page">
-      <h1>Search Results</h1>
+      <h1>Search {results.length > 1 ? 'Results' : 'Result' } of "{query}"</h1>
       <ContentWrapper>
         {results?.map((item) => (
           <MovieCard

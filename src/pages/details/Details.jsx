@@ -26,7 +26,7 @@ function Details() {
   if (mediaType !== "movie" && mediaType !== "tv")
     return (
       <div className="no-result">
-        <img src={NoResult} />
+        <img src={NoResult} className="no-result-img" />
       </div>
     );
 

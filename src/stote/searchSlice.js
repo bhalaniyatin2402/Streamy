@@ -21,7 +21,7 @@ const searchSlice = createSlice({
         results: [...state.results, ...action.payload.results],
       };
     },
-    setEmptySearch(state, action) {
+    setEmptySearch() {
       return {
         loading: false,
         pageNo: 0,
@@ -29,7 +29,7 @@ const searchSlice = createSlice({
         results: [],
       };
     },
-    setPageNo(state, action) {
+    setPageNo(state) {
       return {
         ...state,
         pageNo: state.pageNo + 1,

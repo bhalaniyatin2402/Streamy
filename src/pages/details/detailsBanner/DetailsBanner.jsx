@@ -25,7 +25,7 @@ function DetailsBanner({ video, crew, loading }) {
   const { data, isFetching, isError } = useDetailsQuery({ mediaType, id });
   const { data: imageUrl, isFetching: imageUrlFetching } = useImageUrlQuery();
 
-  if (isFetching || imageUrlFetching)
+  if (isFetching || imageUrlFetching || loading)
     return (
       <section className="detail-banner-section">
         <DetailsSkeleton />
